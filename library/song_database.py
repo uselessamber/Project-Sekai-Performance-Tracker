@@ -7,13 +7,13 @@ class song_database:
         self.recent_play = []
 
     def save_data(self):
-        with open("global_play.json", "w+") as f:
+        with open("play_data/global_play.json", "w+") as f:
             output = []
             for s in self.song_list:
                 output.append(s.data)
             json.dump(output, f)
 
-        with open("recent_play.json", "w+") as f:
+        with open("play_data/recent_play.json", "w+") as f:
             output = []
             for s in self.recent_play:
                 output.append(s.data)
@@ -21,7 +21,7 @@ class song_database:
     
     def load_data(self):
         try:
-            with open("global_play.json", "r+") as f:
+            with open("play_data/global_play.json", "r+") as f:
                 temp_list = json.load(f)
                 for obj in temp_list:
                     self.song_list.append(song(
@@ -39,7 +39,7 @@ class song_database:
             print("Global save file does not exist.")
 
         try:
-            with open("recent_play.json", "r+") as f:
+            with open("play_data/recent_play.json", "r+") as f:
                 temp_list = json.load(f)
                 for obj in temp_list:
                     self.recent_play.append(song(
