@@ -111,6 +111,10 @@ class song_database:
             "rank",
             "p-rating"]
         if s_type in type_list:
+            if s_type == "name":
+                return sorted(self.song_list, 
+                                        key = lambda d : d.data[s_type].upper(), 
+                                        reverse = descending_order)
             return sorted(self.song_list, 
                                     key = lambda d : d.data[s_type], 
                                     reverse = descending_order)

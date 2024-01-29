@@ -38,7 +38,10 @@ With:
 - Sr = The sum of the last 10 play ratings you have.
 
 ## V. What will be added in the future?
-Right now the input field is rather fragile, as it doesn't automatically filter out special characters. In the future, a system would be added in place to prevent the same song from appearing twice. Probably by implementing the whole song list, maybe maybe.
+Song list has been implemented.
+Song sorting has been implemented.
+Song list is malleable and can be modified to update new songs (within the song_list folder).
+Probably automatic difficulty setting, support for Append difficulty and JP server in the future.
 
 ## VI. Last words
 The system implemented here is studied from Arcaea's Play Rating and Potential system, which you can find information about through wikis. Stuff that I have implemented here are all public information. So feel free to use it.
