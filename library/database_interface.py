@@ -32,7 +32,7 @@ class db_interface(tk.Frame):
                 allowed_song_list.append(line)
         allowed_song_list.sort(key = lambda v : v.upper())
     
-    def __init__(self, master = None, width = 1000, height = 750):
+    def __init__(self, master = None, width = 1250, height = 900):
         self.open_song_list()
 
         # Initialize screen

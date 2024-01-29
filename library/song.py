@@ -9,11 +9,11 @@ def scoring_system(perfect : int,
 
 def score_modifier(score : int):
     if score >= 10000000:
-        return 2.0
+        return 5.0
     elif score >= 9800000:
-        return 1.0 + (score - 9800000) / 200000
+        return 2.5 + 2.5 * ((score - 9800000) / 200000)
     else:
-        return (score - 9500000) / 300000
+        return 2.5 * ((score - 9500000) / 300000)
 
 class song:
     def __init__(self, 
