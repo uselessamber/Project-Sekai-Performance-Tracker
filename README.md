@@ -1,7 +1,8 @@
 # The Project Sekai Performance Tracker
 ![UI Showcase](https://i.imgur.com/gsHOfq2.png)
 ## I. What is this?
-It's a program that tracks your pjsk performance using Arcaea's Potential and Scoring System.
+This program helps keep track of your performance in a mobile rhythm game called Project Sekai.
+Sadly, outside of ranked play in that game, the score is calculated by a combination of several factors with minimal dependency on accuracy. In other word, outside of ranked play, PJSK does not have an accuracy based scoring system. It annoys me a lot so I have decided to take it upon myself to make a program that keep tracks of approximately how good you are at the game.
 
 ## II. Scoring System
 The maximum score is 10000000 + note count.
