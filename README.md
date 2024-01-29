@@ -1,4 +1,5 @@
 # The Project Sekai Performance Tracker
+![UI Showcase](https://imgur.com/a/Sdbm6Fy)
 ## I. What is this?
 It's a program that tracks your pjsk performance using Arcaea's Potential and Scoring System.
 
