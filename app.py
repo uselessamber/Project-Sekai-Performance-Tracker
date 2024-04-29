@@ -7,7 +7,7 @@ from library.database_interface import db_interface
 if __name__ == "__main__":
     master = tk.Tk()
     master.iconbitmap("app.ico")
-    master.title("Project Sekai Performance Tracker v2")
+    master.title("Project Sekai Performance Tracker v3")
     style = ttk.Style(
         master = master
     )

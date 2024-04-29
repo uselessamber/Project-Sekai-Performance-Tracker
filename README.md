@@ -6,6 +6,8 @@ Sadly, outside of ranked play in that game, the score is calculated by a combina
 
 The v1 version of this program uses the precise version of Arcaea's scoring system. Which after a bit of calculation turns out to be not as good as I thought. Elaborate down in the play rating section.
 
+The v3 version completely phased out Arcaea's scoring system entirely in favor of its own system based on the ranked score (Score which you would get by playing this chart in ranked matches) for a more accurate performance tracking.
+
 ## II. Scoring System
 The scoring uses the same system as Project Sekai Ranked Score
 The score are calculated as:
