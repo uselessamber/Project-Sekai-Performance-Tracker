@@ -4,16 +4,17 @@ def scoring_system(perfect : int,
                    bad     : int, 
                    miss    : int):
     note_count = perfect + great + good + bad + miss
-    note_score = 10000000 / note_count
-    return int((note_score + 1) * perfect + (note_score * 0.5) * great)
+    score = perfect * 3 + great * 2 + good
+    max_score = note_count * 3
+    return (score, (((score / max_score) * 10000) // 1) / 100)
 
-def score_modifier(score : int):
-    if score >= 10000000:
-        return 5.0
-    elif score >= 9800000:
-        return 2.5 + 2.5 * ((score - 9800000) / 200000)
+def score_modifier(accuracy : int):
+    if accuracy >= 100:
+        return 3.0
+    elif accuracy >= 97:
+        return 1 + 2 * ((accuracy - 97) / 3)
     else:
-        return 2.5 * ((score - 9500000) / 300000)
+        return 1 * ((accuracy - 92) / 5)
 
 class song:
     def __init__(self, 
@@ -29,6 +30,7 @@ class song:
             "bad"      : notes[3],
             "miss"     : notes[4],
             "score"    : 0,
+            "accuracy" : 0,
             "rank"     : "D",
             "p-rating" : 0
         }
@@ -49,25 +51,25 @@ class song:
             self.update_score()
 
     def update_score(self):
-        self.data["score"] = scoring_system(
+        self.data["score"], self.data["accuracy"] = scoring_system(
             self.data["perfect"],
             self.data["great"],
             self.data["good"],
             self.data["bad"],
             self.data["miss"]
         )
-        if self.data["score"] >= 9900000:
-            self.data["rank"] = "EX+"
-        elif self.data["score"] >= 9800000:
-            self.data["rank"] = "EX"
-        elif self.data["score"] >= 9500000:
-            self.data["rank"] = "AA"
-        elif self.data["score"] >= 9200000:
+        if   self.data["accuracy"] >= 100:
+            self.data["rank"] = "SS+"
+        elif self.data["accuracy"] >= 99:
+            self.data["rank"] = "SS"
+        elif self.data["accuracy"] >= 97:
+            self.data["rank"] = "S"
+        elif self.data["accuracy"] >= 92:
             self.data["rank"] = "A"
-        elif self.data["score"] >= 8900000:
+        elif self.data["accuracy"] >= 85:
             self.data["rank"] = "B"
-        elif self.data["score"] >= 8600000:
+        elif self.data["accuracy"] >= 76:
             self.data["rank"] = "C"
         else:
-            self.data["rank"] = "D"
-        self.data["p-rating"] = self.data["diff"] + score_modifier(self.data["score"])
+            self.data["rank"] = "F"
+        self.data["p-rating"] = self.data["diff"] + score_modifier(self.data["accuracy"])

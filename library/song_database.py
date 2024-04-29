@@ -108,6 +108,7 @@ class song_database:
             "bad",
             "miss",
             "score",
+            "accuracy",
             "rank",
             "p-rating"]
         if s_type in type_list:

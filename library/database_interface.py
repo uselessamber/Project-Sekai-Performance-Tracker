@@ -19,6 +19,7 @@ allowed_sort_type = [
             "bad",
             "miss",
             "score",
+            "accuracy",
             "rank",
             "p-rating"]
 
@@ -51,7 +52,7 @@ class db_interface(tk.Frame):
         self.potential_label   = tk.Label(
             master = self.main_frame, 
             font   = ("Aptos", 26), 
-            text   = f"Potential\n{self.potential:.02f}")
+            text   = f"Rating\n{self.potential:.02f}")
         self.potential_label.pack()
 
         # Save Data
@@ -182,6 +183,7 @@ class db_interface(tk.Frame):
                 "bad",
                 "miss",
                 "score",
+                "accuracy", 
                 "rank",
                 "p-rating"
             ]
@@ -225,16 +227,16 @@ class db_interface(tk.Frame):
             change = new_potential - self.potential
             if abs(change) < 0.01:
                 messagebox.showinfo(
-                    title = "Potential",
+                    title = "Rating",
                     message = "-Keep-"
                 )
             else:
                 messagebox.showinfo(
-                    title = "Potential",
-                    message = f"{'+' if change > 0 else ''}{change:.02f}"
+                    title = "Rating",
+                    message = f"{'+' if change > 0 else '-'}{change:.02f}"
                 )
             self.potential = new_potential
-            self.potential_label.config(text = f"Potential\n{self.potential:.02f}")
+            self.potential_label.config(text = f"Rating\n{self.potential:.02f}")
             
             for i in range(2, 8):
                 self.input_list[i].delete(0, 'end')
